@@ -47,9 +47,13 @@ module.exports = {
     { src: '~plugins/axios', ssr: false }
   ],
   /*
+  ** Dev configuration
+  */
+  dev: process.env.NODE_ENV !== 'production',
+  /*
   ** Environment variables configuration
   */
   env: {
-    BASE_URL: process.env.ENV === 'production' ? 'https://domain-name/api' : 'http://localhost:3000/api'
+    BASE_URL: process.env.NODE_ENV === 'production' ? 'https://domain-name/api' : 'http://localhost:3000/api'
   }
 };

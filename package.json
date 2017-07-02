@@ -5,9 +5,9 @@
   "author": "Fortify Communications Inc.",
   "private": true,
   "scripts": {
-    "dev": "cross-env PORT=3300 node server.js",
+    "dev": "cross-env NODE_ENV=development PORT=3300 node server.js",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "cross-env NODE_ENV=production PORT=3300 node server.js",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
